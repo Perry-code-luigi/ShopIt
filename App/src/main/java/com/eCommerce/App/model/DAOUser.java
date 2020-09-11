@@ -2,18 +2,16 @@ package com.eCommerce.App.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
 
 @Document(collection = "users")
 public class DAOUser {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@Column
+
 	private String username;
-	@Column
+
 	@JsonIgnore
 	private String password;
 
